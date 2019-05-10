@@ -4,14 +4,11 @@
 
 <head>
 
-<meta name="description" content="<?php
-
-   if(isset($metaD) && !empty($metaD)) { 
-      echo $metaD; 
-   } 
-   else { 
-      echo "Some meta description"; 
-   } ?>" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <title>
    <?php 
@@ -19,7 +16,7 @@
       echo $title; 
    } 
    else { 
-      echo "Default title tag"; 
+      echo "Time"; 
    } ?>
 </title>
 
@@ -31,22 +28,26 @@
 
 <header>
 
-<nav>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
 
-   <div><img src="images/logo.jpg" alt="logo"></div>
+   <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_navbar">
+      <span class="navbar-toggler-icon"></span>
+   </button>
 
-   <ul>
+   <div class="collapse navbar-collapse" id="collapse_navbar">
+      <a class="navbar-brand"><img src="#"></a>
+      <span class="navbar-text">Time</span>
 
-      <li><a href="">Link 1</a></li>
-
-      <li><a href="">Link 2</a></li>
-
-      <li><a href="">Link 3</a></li>
-
-      <li><a href="">Link 4</a></li>
-
+   <ul class="navbar-nav">
+      <li class="nav-item">
+         <a class="nav-link" href="#">Link 1</a>
+      </li>
+      <li class="nav-item">
+         <a class="nav-link" href="#">Link 2</a>
+      </li>
+   
    </ul>
-
+  </div>
 </nav>
 
 </header>
