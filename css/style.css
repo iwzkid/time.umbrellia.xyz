@@ -1,3 +1,10 @@
+/* HEADER.PHP*/
+
+.navbar-brand > img {
+    width: 30px;
+}
+
+
 h1 {
     color: aqua;
 }
