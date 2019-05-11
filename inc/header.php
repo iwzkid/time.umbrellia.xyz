@@ -39,19 +39,19 @@
 
    <ul class="navbar-nav">
       <li class="nav-item">
-         <a class="nav-link" href="#">Home</a>
+         <a class="nav-link" href="index.php?page=home">Home</a>
       </li>
       <li class="nav-item">
-         <a class="nav-link" href="#">Agenda</a>
+         <a class="nav-link" href="index.php?page=agenda">Agenda</a>
       </li>
       <li class="nav-item">
-         <a class="nav-link" href="#">Important</a>
+         <a class="nav-link" href="index.php?page=important">Important</a>
       </li>
       <li class="nav-item">
-         <a class="nav-link" href="#">Notes</a>
+         <a class="nav-link" href="index.php?page=notes">Notes</a>
       </li>
       <li class="nav-item">
-         <a class="nav-link" href="#">Login</a>
+         <a class="nav-link" href="index.php?page=login">Login</a>
       </li>
    
    </ul>

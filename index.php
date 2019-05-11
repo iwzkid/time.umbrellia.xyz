@@ -3,25 +3,23 @@
 <?php
 $title = "Time";
 $metaD = "For Time Management!";
-?>
 
-   <h1>Heading 1</h1>
+$page=$_GET['page'];
 
-   <p>Some text.</p>
+if($page == 'home' || $page==""){
+    include 'inc/home.php';
+}
+elseif ($page == 'agenda'){
+    include 'inc/agenda.php';
+}
+elseif ($page == 'important'){
+    include 'inc/important.php';
+}
+elseif ($page == 'notes'){
+    include 'inc/notes.php';
+}
+elseif ($page == 'login'){
+    include 'inc/login.php';
+}
 
-   <h2>Heading 2</h2>
-
-   <p>Some more text.</p>
-
-<?php
-$path = $_SERVER['QUERY_STRING'];
-echo $path;
-echo '<br>';
-$url = substr($path, strpos($path, "/") + 1);
-echo $url;
-echo '<br>';
-$final_path = substr($url, strpos($url, "/") + 1);
-echo $final_path;
-?>
-
-<?php include 'inc/footer.php';?>
+include 'inc/footer.php';

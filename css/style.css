@@ -22,3 +22,8 @@ h1 {
 #black_umbrellia {
     width: 30px;
 }
+
+#footer_column_1,
+#footer_column_2 {
+    padding-top: 10px;
+}
