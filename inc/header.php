@@ -60,4 +60,4 @@
 
 </header>
 
-<div class="container">
+<div class="container" id="global_content_position">

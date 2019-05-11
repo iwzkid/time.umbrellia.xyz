@@ -4,11 +4,16 @@
     width: 30px;
 }
 
-/* CONTENT */
-
-h1 {
-    color: aqua;
+/* CONTENT GLOBAL */
+body {
+    height: 100%;
 }
+
+#global_content_position {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 
 /* FOOTER.php */
 
@@ -17,13 +22,41 @@ h1 {
     background-color: #cc0000;
     color: white;
     text-align: center;
+    min-height: 100px;
+}
+
+#footer_column_1,
+#footer_column_2 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#footer_column_1 {
+    padding-right: 20px;
+    border-right: 1px solid #ccc;
 }
 
 #black_umbrellia {
     width: 30px;
 }
 
-#footer_column_1,
-#footer_column_2 {
-    padding-top: 10px;
+/*PAGE SPECIFIC CSS*/
+
+/*CALENDAR*/
+
+hr {
+    width: 100%;
+    height: 1px;
+    margin-top: 0; 
+}
+
+#calendar {
+    width: 100%;
+}
+   
+/*NAVIG of AGENDA*/
+
+#navig {
+    padding-bottom: 10px;
+    font-size: 15px;
 }
