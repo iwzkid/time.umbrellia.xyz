@@ -35,14 +35,23 @@
 
    <div class="collapse navbar-collapse" id="collapse_navbar">
       <a class="navbar-brand"><img src="./img/umbrellia.png" alt="umbrellia"></a>
-      <span class="navbar-text">Time</span>
+   <!--   <span class="navbar-text">Time</span> -->
 
    <ul class="navbar-nav">
       <li class="nav-item">
-         <a class="nav-link" href="#">Link 1</a>
+         <a class="nav-link" href="#">Home</a>
       </li>
       <li class="nav-item">
-         <a class="nav-link" href="#">Link 2</a>
+         <a class="nav-link" href="#">Agenda</a>
+      </li>
+      <li class="nav-item">
+         <a class="nav-link" href="#">Important</a>
+      </li>
+      <li class="nav-item">
+         <a class="nav-link" href="#">Notes</a>
+      </li>
+      <li class="nav-item">
+         <a class="nav-link" href="#">Login</a>
       </li>
    
    </ul>
