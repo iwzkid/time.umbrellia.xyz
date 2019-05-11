@@ -1,11 +1,14 @@
-<?php include 'inc/header.php';?>
+<?php 
+#include header
+include 'inc/header.php';
 
-<?php
 $title = "Time";
 $metaD = "For Time Management!";
 
+#get page parameter
 $page=$_GET['page'];
 
+#based on page, include files
 if($page == 'home' || $page==""){
     include 'inc/home.php';
 }
@@ -22,4 +25,5 @@ elseif ($page == 'login'){
     include 'inc/login.php';
 }
 
+#include footer
 include 'inc/footer.php';
