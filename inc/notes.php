@@ -1,0 +1,2 @@
+<?php
+#NOTES BASIC PAGE

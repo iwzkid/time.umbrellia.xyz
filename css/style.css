@@ -1,10 +1,24 @@
-/* HEADER.PHP*/
+/* HEADER.PHP */
 
 .navbar-brand > img {
     width: 30px;
 }
 
+/* CONTENT */
 
 h1 {
     color: aqua;
+}
+
+/* FOOTER.php */
+
+.footer {
+    width: 100%;
+    background-color: #cc0000;
+    color: white;
+    text-align: center;
+}
+
+#black_umbrellia {
+    width: 30px;
 }

@@ -1,0 +1,2 @@
+<?php
+#DISPLAYS TODAY's COUNT of EVENTS
