@@ -1,3 +1,5 @@
+<main class="content-main">
+    
 <?php 
 #include header
 include 'inc/header.php';
@@ -27,3 +29,6 @@ elseif ($page == 'login'){
 
 #include footer
 include 'inc/footer.php';
+?>
+
+</main>
