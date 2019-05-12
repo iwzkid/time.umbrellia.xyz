@@ -7,7 +7,7 @@
     <br>
     Name:
     <br>
-    Notes: optional, 50 characters.
+    Location:
     <br>
     Date & Time:
     <br>

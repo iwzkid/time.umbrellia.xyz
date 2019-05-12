@@ -4,6 +4,9 @@
 #include header
 include 'inc/header.php';
 
+#include DB functions files
+include 'inc/db_functions.php';
+
 $title = "Time";
 $metaD = "For Time Management!";
 
