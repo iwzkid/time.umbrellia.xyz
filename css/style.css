@@ -71,3 +71,25 @@ hr {
     padding-bottom: 10px;
     font-size: 15px;
 }
+
+/* DISPLAY NOTES of NOTES*/
+
+.notes-table {
+    width: 100%;
+}
+
+.notes-table td {
+    padding: 5px;
+}
+
+.notes_column {
+    width: 75%;
+}
+
+.notes_time {
+    width: 25%;
+}
+
+.notes-table tr {
+    border-bottom: 1px solid #cc0000;
+}
