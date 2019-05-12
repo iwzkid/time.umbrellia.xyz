@@ -4,6 +4,14 @@
     width: 30px;
 }
 
+.navbar-nav {
+    width: 100%;
+}
+
+.navbar-nav li:nth-last-child(n) {
+    float: right;
+}
+
 /* CONTENT GLOBAL */
 #global_content_position {
     height: 100%;
