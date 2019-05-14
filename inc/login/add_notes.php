@@ -3,12 +3,23 @@
 ?>
 
 <div class="container-fluid">
+    <hr>
     <h5>Add note:</h5>
-    <br>
-    Note:
-    <br>
-    Valid until:
-    <br>
-    Add note button
-    <br> 
+    <form method="POST">
+        Note:
+        <br>
+        <input type="text" name="note_text" placeholder="note"/>
+        <br>
+        Valid until:
+        <br>
+        <input type="text" name="valid_until" placeholder="display until"/> 
+        <br>
+        <br>
+        <button type="submit" class="btn btn-success">Add</button>
+        <br>
+    </form>
+    <hr>
 </div>
+
+
+

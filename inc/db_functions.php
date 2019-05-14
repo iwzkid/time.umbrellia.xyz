@@ -26,7 +26,7 @@ function display_notes() {
         echo '<table class="notes-table">';
 
         echo '<thead>';
-        echo '<th><h5>Notes</h5></th><th><h5>Date</h5></th>';
+        echo '<th><h5>Notes:</h5></th><th><h5>Valid until:</h5></th>';
         echo '</thead>';
 
         echo '<tbody>';
@@ -45,4 +45,12 @@ function display_notes() {
 
         echo '</tbody>';
         echo '</table>';     
+}
+
+//INSERT into notes table
+
+if($_POST['note_text'] && $_POST['valid_until']) {
+    $insert_query = 'INSERT INTO `notes_table`(`notes`, `date_time`) VALUES (?, ?)';
+    $stmt = $pdo->prepare($insert_query);
+    $stmt->execute([$_POST['note_text'], $_POST['valid_until']]);
 }
