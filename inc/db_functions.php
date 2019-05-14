@@ -78,7 +78,7 @@ echo '<tbody>';
 while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 
     //$important = '<a href="?mark_important='.$row['id'].'">Checkbox</a>';
-    $delete = '<a href="?delete_event='.$row['id'].'">x</a>';
+    $delete = '<a href="?page=login&delete_event='.$row['id'].'">x</a>';
 
     echo '<tr>';
     echo '<td>' . $row['name'] .'</td>';
@@ -98,11 +98,39 @@ echo '</table>';
 
 //DELETE EVENT
 
-//DELETE ITEM
 if($_GET['delete_event']){
 
     $delete_query = 'DELETE FROM events_table WHERE id = ?';
     $stmt = $pdo->prepare($delete_query);
     $stmt->execute([$_GET['delete_event']]);
+
+}
+
+//DISPLAY NEXT 3 EVENTS
+
+function upcoming_3 () {
+
+    global $pdo;
+
+$stmt = $pdo->query('SELECT * FROM events_table ORDER BY date_time asc LIMIT 3');
+
+echo '<table class="upcoming3-table">';
+echo '<thead>';
+echo '<th><h5>Name</h5></th><th><h5>Location</h5></th><th><h5>Date & Time</h5></th>';
+echo '</thead>';
+echo '<tbody>';
+
+while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+
+    echo '<tr>';
+    echo '<td>' . $row['name'] .'</td>';
+    echo '<td>' . $row['location'] . '</td>';
+    echo '<td>' . $row['date_time'] . '</td>';
+    echo '</tr>';
+
+} 
+
+echo '</tbody>';
+echo '</table>';
 
 }

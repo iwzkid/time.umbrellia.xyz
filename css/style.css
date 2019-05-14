@@ -103,3 +103,17 @@ hr {
 .events-table th {
     border: 1px solid #cc0000;
 }
+
+/*Display UPCOMING 3 OF HOME PAGE*/
+.upcoming3-table {
+    width: 100%;
+}
+
+.upcoming3-table td {
+    padding: 5px;
+    border: 1px solid #cc0000;
+}
+
+.upcoming3-table th {
+    border: 1px solid #cc0000;
+}
