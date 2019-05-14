@@ -54,3 +54,12 @@ if($_POST['note_text'] && $_POST['valid_until']) {
     $stmt = $pdo->prepare($insert_query);
     $stmt->execute([$_POST['note_text'], $_POST['valid_until']]);
 }
+
+
+//INSERT into events table
+
+if($_POST['name_event'] && $_POST['location_event'] && $_POST['time_event'] && $_POST['important_event'] && $_POST['recurring_event']) {
+    $insert_query = 'INSERT INTO `events_table`(`name`, `location`, `date_time`, `important`, `recurring`) VALUES (?, ?, ?, ?, ?)';
+    $stmt = $pdo->prepare($insert_query);
+    $stmt->execute([$_POST['name_event'], $_POST['location_event'], $_POST['time_event'], $_POST['important_event'], $_POST['recurring_event']]);
+}

@@ -3,20 +3,31 @@
 ?>
 
 <div class="container-fluid">
+    <hr>
     <h5>Add event to agenda:</h5>
-    <br>
-    Name:
-    <br>
-    Location:
-    <br>
-    Date & Time:
-    <br>
-    Important:
-    checkbox value
-    <br>
-    Recurring: Yes - 2 this week and next week., Minimum value is 2.
-    No - default is 1, one time event.
-    <br>
-    Add event button
-    <br> 
+    <form method="POST">
+        Name:
+        <br>
+        <input type="text" name="name_event" placeholder="name"/>
+        <br>
+        Location:
+        <br>
+        <input type="text" name="location_event" placeholder="location"/> 
+        <br>
+        Date & Time:
+        <br>
+        <input type="text" name="time_event" placeholder="date and time"/> 
+        <br>
+        Important:
+        <br>
+        <input type="text" name="important_event" placeholder="important"/> 
+        <br>
+        Recurring:
+        <br>
+        <input type="text" name="recurring_event" placeholder="reccurs for"/> 
+        <br>
+        <br>
+        <button type="submit" class="btn btn-success">Add</button>
+        <br>
+    </form>
 </div>
