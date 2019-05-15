@@ -13,8 +13,14 @@ $dsn = 'mysql:host='. $host .';dbname='. $db;
 //PDO_instance
 $pdo = new PDO($dsn, $user, $password);
 
-//SELECT & DISPLAY NOTES
+//FORMAT DATE AND TIME
 
+function format_datetime ($date) {
+    return date('d-m H:i', strtotime($date));
+}
+
+
+//SELECT & DISPLAY NOTES
 function display_notes() {
     global $pdo;
 
@@ -35,7 +41,7 @@ function display_notes() {
 
             echo '<tr>';
             echo '<td class="notes_column">' . $row['notes'] .'</td>';
-            echo '<td class="notes_time">' . $row['date_time'] . '</td>';
+            echo '<td class="notes_time">' . format_datetime($row['date_time']) . '</td>';
             echo '</tr>';
 
         } 
@@ -45,7 +51,6 @@ function display_notes() {
 }
 
 //INSERT into notes table
-
 if($_POST['note_text'] && $_POST['valid_until']) {
     $insert_query = 'INSERT INTO `notes_table`(`notes`, `date_time`) VALUES (?, ?)';
     $stmt = $pdo->prepare($insert_query);
@@ -54,7 +59,6 @@ if($_POST['note_text'] && $_POST['valid_until']) {
 
 
 //INSERT into events table
-
 if($_POST['name_event'] && $_POST['location_event'] && $_POST['time_event'] && $_POST['important_event'] && $_POST['recurring_event']) {
     $insert_query = 'INSERT INTO `events_table`(`name`, `location`, `date_time`, `important`, `recurring`) VALUES (?, ?, ?, ?, ?)';
     $stmt = $pdo->prepare($insert_query);
@@ -62,7 +66,6 @@ if($_POST['name_event'] && $_POST['location_event'] && $_POST['time_event'] && $
 }
 
 //DISPLAY ALL EVENTS ON THE IMPORTANT_OR_DELETE.php module
-
 function display_events() {
 
 global $pdo;
@@ -83,7 +86,7 @@ while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     echo '<tr>';
     echo '<td>' . $row['name'] .'</td>';
     echo '<td>' . $row['location'] . '</td>';
-    echo '<td>' . $row['date_time'] . '</td>';
+    echo '<td>' . format_datetime($row['date_time']) . '</td>';
     echo '<td>' . $row['important'] . '</td>';
     //echo '<td>' . $important . '</td>';
     echo '<td>' . $delete . '</td>'; 
@@ -97,7 +100,6 @@ echo '</table>';
 }
 
 //DELETE EVENT
-
 if($_GET['delete_event']){
 
     $delete_query = 'DELETE FROM events_table WHERE id = ?';
@@ -107,7 +109,6 @@ if($_GET['delete_event']){
 }
 
 //DISPLAY NEXT 3 EVENTS
-
 function upcoming_3 () {
 
     global $pdo;
@@ -125,7 +126,7 @@ while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     echo '<tr>';
     echo '<td>' . $row['name'] .'</td>';
     echo '<td>' . $row['location'] . '</td>';
-    echo '<td>' . $row['date_time'] . '</td>';
+    echo '<td>' . format_datetime($row['date_time']) . '</td>';
     echo '</tr>';
 
 } 
@@ -134,3 +135,5 @@ echo '</tbody>';
 echo '</table>';
 
 }
+
+//SELECT * events_table WHERE important=1 ORDER BY date_time asc ->UPCOMING EVENTS

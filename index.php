@@ -1,6 +1,9 @@
-<main class="content-main">
-    
-<?php 
+<?php
+
+//error_reporting(E_ALL);
+//ini_set('display_errors', 1); 
+
+
 #include header
 include 'inc/header.php';
 
@@ -32,6 +35,3 @@ elseif ($page == 'login'){
 
 #include footer
 include 'inc/footer.php';
-?>
-
-</main>
