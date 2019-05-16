@@ -1,8 +1,8 @@
 <?php
 #HOME PAGE
-?>
+include 'home/jumbotron.php';?>
+
 <div class="containter-fluid">
-    <?php include 'home/jumbotron.php';?>
         <div class="row">
             <div class="col-md-4 col-sm-12">
                 <?php include 'home/upcoming.php';?>

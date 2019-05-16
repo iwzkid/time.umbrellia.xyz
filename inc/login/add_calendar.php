@@ -18,6 +18,10 @@
         <br>
         <input type="text" name="time_event" placeholder="date and time"/> 
         <br>
+        Duration:
+        <br>
+        <input type="text" name="duration_event" placeholder="duration of event"/> 
+        <br>
         Important:
         <br>
         <input type="text" name="important_event" placeholder="important"/> 

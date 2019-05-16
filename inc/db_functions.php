@@ -59,10 +59,10 @@ if($_POST['note_text'] && $_POST['valid_until']) {
 
 
 //INSERT into events table
-if($_POST['name_event'] && $_POST['location_event'] && $_POST['time_event'] && $_POST['important_event'] && $_POST['recurring_event']) {
-    $insert_query = 'INSERT INTO `events_table`(`name`, `location`, `date_time`, `important`, `recurring`) VALUES (?, ?, ?, ?, ?)';
+if($_POST['name_event'] && $_POST['location_event'] && $_POST['time_event'] && $_POST['duration_event'] && $_POST['important_event'] && $_POST['recurring_event']) {
+    $insert_query = 'INSERT INTO `events_table`(`name`, `location`, `date_time`, `duration` , `important`, `recurring`) VALUES (?, ?, ?, ?, ?, ?)';
     $stmt = $pdo->prepare($insert_query);
-    $stmt->execute([$_POST['name_event'], $_POST['location_event'], $_POST['time_event'], $_POST['important_event'], $_POST['recurring_event']]);
+    $stmt->execute([$_POST['name_event'], $_POST['location_event'], $_POST['time_event'], $_POST['duration_event'], $_POST['important_event'], $_POST['recurring_event']]);
 }
 
 //DISPLAY ALL EVENTS ON THE IMPORTANT_OR_DELETE.php module
@@ -115,9 +115,9 @@ function upcoming_3 () {
 
 $stmt = $pdo->query('SELECT * FROM events_table ORDER BY date_time asc LIMIT 3');
 
-echo '<table class="upcoming3-table">';
+echo '<table class="table table-hover">';
 echo '<thead>';
-echo '<th><h5>Name</h5></th><th><h5>Location</h5></th><th><h5>Date & Time</h5></th>';
+echo '<th>Name</th><th>Location</th><th>Date&Time</th>';
 echo '</thead>';
 echo '<tbody>';
 
@@ -137,3 +137,25 @@ echo '</table>';
 }
 
 //SELECT * events_table WHERE important=1 ORDER BY date_time asc ->UPCOMING EVENTS
+
+
+//Event Count for today - EVENTS LEFT
+
+
+
+function eventsleft_count() {
+
+    global $pdo;
+
+    $eventscountquery = "SELECT COUNT(*) 'count' FROM events_table WHERE DAY(date_time)=DAY(NOW()) AND MONTH(date_time)=MONTH(NOW()) AND date_time > NOW()";
+
+    $stmt = $pdo->query($eventscountquery);
+
+    $result = $stmt->fetch();
+
+    if(!empty($result)){
+        echo $result['count'];
+    }else{
+        echo "There are no events left for today";
+    }
+}

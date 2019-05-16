@@ -3,10 +3,14 @@
 ?>
 
 <div class="containter-fluid">
-    <div class="row">
-            <?php include 'agenda/navig.php';?>
-    </div>
-    <div class="row">
-            <?php include 'agenda/calendar.php';?>
-    </div>
+        <div class="row">
+                <div class="col-md-12">
+                        <?php include 'agenda/navig.php';?>
+                </div>
+        </div>
+        <div class="row">
+                <div class="col-md-12">
+                        <?php include 'agenda/calendar.php';?>
+                </div>
+        </div>
 </div>

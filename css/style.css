@@ -13,10 +13,7 @@
 }
 
 /* CONTENT GLOBAL */
-#global_content_position {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
+
 
 /* FOOTER.php */
 
@@ -60,10 +57,15 @@ hr {
 
 #navig {
     padding-bottom: 10px;
+    padding-top: 10px;
     font-size: 15px;
 }
 
 /* DISPLAY NOTES of NOTES*/
+
+.notes-display{
+    padding-top: 10px;
+}
 
 .notes-table {
     width: 100%;
@@ -100,6 +102,12 @@ hr {
     border: 1px solid #cc0000;
 }
 
+/*JUMBOTRON ATTEMPT ON STYLING*/
+
+.jumbotron {
+
+}
+
 /*Display UPCOMING 3 OF HOME PAGE*/
 .upcoming3-table {
     width: 100%;
@@ -112,4 +120,18 @@ hr {
 
 .upcoming3-table th {
     border: 1px solid #cc0000;
+}
+
+/*CALENDAR DISPLAY*/
+
+.dayname {
+    width: 100%;
+    padding-top: 10px;
+}
+
+.dayname hr {
+    height: 1px;
+    color: #cc0000;
+    background-color: red;
+    border: none;
 }

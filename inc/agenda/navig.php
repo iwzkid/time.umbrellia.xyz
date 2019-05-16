@@ -4,10 +4,12 @@
 
 <div class="container-fluid" id="navig">
     <div class="row">
-        <a href="index.php?page=agenda&week=prev">Previous</a>
-        <span><<</span>
-        <a href="index.php?page=agenda">This Week</a>
-        <span>>></span>
-        <a href="index.php?page=agenda&week=next">Next</a>
+        <div class="col-md-12">
+            <div class="btn-group pull-right" role="group" aria-label="Basic example">
+                <a class="btn btn-outline-secondary btn-sm" href="index.php?page=agenda&week=prev">Previous</a>
+                <a class="btn btn-outline-secondary btn-sm" href="index.php?page=agenda">This Week</a>
+                <a class="btn btn-outline-secondary btn-sm" href="index.php?page=agenda&week=next">Next</a>
+            </div>
+        </div>
     </div>
 </div>

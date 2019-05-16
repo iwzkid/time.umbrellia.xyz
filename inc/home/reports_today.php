@@ -4,7 +4,7 @@
 
 <div class="container-fluid" id="reports_today">
     <div class="row">
-        <h5>Events left: </h5>
-        <p> 5 for example. </p>
+        <h5>Events left for today: </h5>
+        <?php eventsleft_count();?>
     </div>
 </div>

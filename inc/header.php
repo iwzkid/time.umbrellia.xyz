@@ -60,4 +60,6 @@
 
 </header>
 
-<div class="container" id="global_content_position">
+<div class="container">
+   <div class="row">
+      <div class="col-md-12">

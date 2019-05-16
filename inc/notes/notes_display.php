@@ -7,7 +7,11 @@
 ?>
 
 <div class="container-fluid">
-<?php display_notes();?>
+    <div class="row">
+        <div class="col-md-12 notes-display">
+        <?php display_notes();?>
+        </div>
+    </div>
 </div>
 
 

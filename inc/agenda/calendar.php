@@ -32,17 +32,18 @@
 
     foreach($daysofweek as $dayname => $events){ ?>
         <div class="row">
-            <h5><?php echo $dayname ?>:</h5>
-            <br><hr>
+            <div class="dayname">
+                <h5><?php echo $dayname ?>:</h5>
+                <hr>
+            </div>
             <?php if(!empty($events)){ 
                 foreach($events as $event){
-                    echo $event['name'];
-                    echo $event['location'];
-                    echo $event['date_time'];
+                    echo $event['name'].' '.$event['location'].' '.format_datetime($event['date_time']); 
                     echo '<br><hr>';
                 }
              } else {
                 echo 'There are no events for this day.';
+                echo '<br><hr>';
             } ?>
         </div>
     <?php } ?>
