@@ -113,15 +113,15 @@ function upcoming_3 () {
 
     global $pdo;
 
-$stmt = $pdo->query('SELECT * FROM events_table ORDER BY date_time asc LIMIT 3');
+    $stmt = $pdo->query('SELECT * FROM events_table ORDER BY date_time asc LIMIT 3');
 
-echo '<table class="table table-hover">';
-echo '<thead>';
-echo '<th>Name</th><th>Location</th><th>Date&Time</th>';
-echo '</thead>';
-echo '<tbody>';
+    echo '<table class="table table-hover">';
+    echo '<thead>';
+    echo '<th>Name</th><th>Location</th><th>Date&Time</th>';
+    echo '</thead>';
+    echo '<tbody>';
 
-while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+    while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 
     echo '<tr>';
     echo '<td>' . $row['name'] .'</td>';
@@ -129,10 +129,10 @@ while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     echo '<td>' . format_datetime($row['date_time']) . '</td>';
     echo '</tr>';
 
-} 
+    } 
 
-echo '</tbody>';
-echo '</table>';
+    echo '</tbody>';
+    echo '</table>';
 
 }
 
@@ -140,9 +140,6 @@ echo '</table>';
 
 
 //Event Count for today - EVENTS LEFT
-
-
-
 function eventsleft_count() {
 
     global $pdo;
@@ -158,4 +155,19 @@ function eventsleft_count() {
     }else{
         echo "There are no events left for today";
     }
+}
+
+//IMPORTANT for TODAY
+
+function important_today(){
+
+    global $pdo;
+
+    $stmt = $pdo->query('SELECT * FROM events_table WHERE DAY(date_time) = DAY(NOW()) AND MONTH(date_time) = MONTH(NOW()) AND important = 1');
+
+    while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+
+    echo $row['name'].' '.$row['location'].' '.format_datetime($row['date_time']).'<br>';
+
+    } 
 }

@@ -12,7 +12,9 @@
       </div>
       <div class="col-md-6 col-sm-12" id="footer_column_2">
          <h5>For edits contact:</h5>
-         <p>Seful clasei</p>
+         <p>Lidia Matei</p>
+         <p>lia@xkid.ro</p>
+         <p>Bacau, Romania</p>
       </div>
    </div>
 </div>

@@ -135,3 +135,9 @@ hr {
     background-color: red;
     border: none;
 }
+
+/*IMPORTANT-TODAY*/
+
+.important-today {
+    padding-top: 10px;
+}
