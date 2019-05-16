@@ -14,11 +14,9 @@ $dsn = 'mysql:host='. $host .';dbname='. $db;
 $pdo = new PDO($dsn, $user, $password);
 
 //FORMAT DATE AND TIME
-
 function format_datetime ($date) {
     return date('d-m H:i', strtotime($date));
 }
-
 
 //SELECT & DISPLAY NOTES
 function display_notes() {
@@ -136,9 +134,6 @@ function upcoming_3 () {
 
 }
 
-//SELECT * events_table WHERE important=1 ORDER BY date_time asc ->UPCOMING EVENTS
-
-
 //Event Count for today - EVENTS LEFT
 function eventsleft_count() {
 
@@ -158,7 +153,6 @@ function eventsleft_count() {
 }
 
 //IMPORTANT for TODAY
-
 function important_today(){
 
     global $pdo;
@@ -170,4 +164,20 @@ function important_today(){
     echo $row['name'].' '.$row['location'].' '.format_datetime($row['date_time']).'<br>';
 
     } 
+}
+
+//NOTES WITH TIGHT DEADLINES
+
+function notes_deadline() {
+
+    global $pdo;
+
+    $stmt = $pdo->query('SELECT * FROM notes_table ORDER BY date_time asc LIMIT 5');
+
+    while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+
+    echo $row['notes'].' '.format_datetime($row['date_time']).'<br>';
+
+    } 
+
 }
