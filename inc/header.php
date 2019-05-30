@@ -51,7 +51,7 @@
          <a class="nav-link" href="index.php?page=notes">Notes</a>
       </li>
       <li class="nav-item">
-         <a class="nav-link" href="index.php?page=login">Login</a>
+         <a class="nav-link" href="index.php?page=login">Admin</a>
       </li>
    
    </ul>
