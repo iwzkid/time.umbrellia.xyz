@@ -12,7 +12,7 @@
         <br>
         Valid until:
         <br>
-        <input type="text" name="valid_until" placeholder="display until"/> 
+        <input type="date" name="valid_until" placeholder="display until"/> 
         <br>
         <br>
         <button type="submit" class="btn btn-success">Add</button>

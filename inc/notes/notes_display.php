@@ -8,8 +8,10 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-12 notes-display">
-        <?php display_notes();?>
+        <div class="col-md-12 notes-display card">
+            <div class="card-body">
+                <?php display_notes();?>
+            </div>
         </div>
     </div>
 </div>

@@ -16,7 +16,7 @@
         <br>
         Date & Time:
         <br>
-        <input type="text" name="time_event" placeholder="date and time"/> 
+        <input type="date" name="time_event" placeholder="date and time"/> 
         <br>
         Duration:
         <br>

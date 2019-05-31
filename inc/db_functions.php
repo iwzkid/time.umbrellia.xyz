@@ -22,7 +22,7 @@ function format_datetime ($date) {
 function display_notes() {
     global $pdo;
 
-    $stmt = $pdo->query('SELECT * FROM notes_table');
+    $stmt = $pdo->query('SELECT * FROM notes_table WHERE date_time > NOW() ORDER BY date_time asc');
 
         echo '<table class="notes-table">';
 
@@ -172,7 +172,7 @@ function notes_deadline() {
 
     global $pdo;
 
-    $stmt = $pdo->query('SELECT * FROM notes_table ORDER BY date_time asc LIMIT 5');
+    $stmt = $pdo->query('SELECT * FROM notes_table WHERE date_time >= NOW() ORDER BY date_time asc LIMIT 5');
 
     while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 
@@ -196,3 +196,30 @@ function important_upcoming3(){
     
         } 
     }
+
+    //SELECT & DISPLAY NOTES
+function display_expirednotes() {
+    global $pdo;
+
+    $stmt = $pdo->query('SELECT * FROM notes_table WHERE date_time < NOW() ORDER BY date_time asc LIMIT 5');
+
+        echo '<table class="notes-table">';
+
+        echo '<thead>';
+        echo '<th><h5>Notes:</h5></th><th><h5>Expired on:</h5></th>';
+        echo '</thead>';
+
+        echo '<tbody>';
+
+        while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+
+            echo '<tr>';
+            echo '<td class="notes_column">' . $row['notes'] .'</td>';
+            echo '<td class="notes_time">' . format_datetime($row['date_time']) . '</td>';
+            echo '</tr>';
+
+        } 
+
+        echo '</tbody>';
+        echo '</table>';     
+}
