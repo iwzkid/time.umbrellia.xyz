@@ -24,7 +24,7 @@
         <br>
         Important:
         <br>
-        <input type="text" name="important_event" placeholder="important"/> 
+        <input type="checkbox" name="important_event"/> 
         <br>
         Recurring:
         <br>

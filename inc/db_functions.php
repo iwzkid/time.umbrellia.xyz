@@ -57,10 +57,11 @@ if($_POST['note_text'] && $_POST['valid_until']) {
 
 
 //INSERT into events table
-if($_POST['name_event'] && $_POST['location_event'] && $_POST['time_event'] && $_POST['duration_event'] && $_POST['important_event'] && $_POST['recurring_event']) {
+if($_POST['name_event'] && $_POST['location_event'] && $_POST['time_event'] && $_POST['duration_event'] && $_POST['recurring_event']) {
+    $important_event = (isset($_POST['important_event'])) ? 1 : 0;
     $insert_query = 'INSERT INTO `events_table`(`name`, `location`, `date_time`, `duration` , `important`, `recurring`) VALUES (?, ?, ?, ?, ?, ?)';
     $stmt = $pdo->prepare($insert_query);
-    $stmt->execute([$_POST['name_event'], $_POST['location_event'], $_POST['time_event'], $_POST['duration_event'], $_POST['important_event'], $_POST['recurring_event']]);
+    $stmt->execute([$_POST['name_event'], $_POST['location_event'], $_POST['time_event'], $_POST['duration_event'], $important_event, $_POST['recurring_event']]);
 }
 
 //DISPLAY ALL EVENTS ON THE IMPORTANT_OR_DELETE.php module
@@ -201,7 +202,7 @@ function important_upcoming3(){
 function display_expirednotes() {
     global $pdo;
 
-    $stmt = $pdo->query('SELECT * FROM notes_table WHERE date_time < NOW() ORDER BY date_time asc LIMIT 5');
+    $stmt = $pdo->query('SELECT * FROM notes_table WHERE date_time < NOW() ORDER BY date_time desc LIMIT 5');
 
         echo '<table class="notes-table">';
 
