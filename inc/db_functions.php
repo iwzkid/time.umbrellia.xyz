@@ -64,8 +64,13 @@ if($_POST['name_event'] && $_POST['location_event'] && $_POST['time_event'] && $
     $stmt->execute([$_POST['name_event'], $_POST['location_event'], $_POST['time_event'], $_POST['duration_event'], $important_event, $_POST['recurring_event']]);
 }
 
+//MARK AS IMPORTANT or DELETE SECTION
+
 //DISPLAY ALL EVENTS ON THE IMPORTANT_OR_DELETE.php module
+
 function display_events() {
+
+$mark_important = isset($_POST["mark_important"]) ? 1 : 0;
 
 global $pdo;
 
@@ -79,15 +84,25 @@ echo '<tbody>';
 
 while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 
-    //$important = '<a href="?mark_important='.$row['id'].'">Checkbox</a>';
+    $valuefromdb = $row['important'];
+    $mark_important = (bool)$valuefromdb; //1 = true, 0 = false
+
+    //var_dump($mark_important);
+    if ($mark_important == '1') {
+        $checkbox_state="checked";
+        $important_checkbox = '<a href="?mark_important='.$row['id'].'"><input type="checkbox" name="mark_important" checked=' . $checkbox_state . '></input></a>';
+    } else {
+        $important_checkbox = '<a href="?mark_important='.$row['id'].'"><input type="checkbox" name="mark_important"></input></a>';
+    } 
+
+    //$important_checkbox = '<a href="?mark_important='.$row['id'].'"><input type="checkbox" name="mark_important" checked=' . $checkbox_state . '></input></a>';
     $delete = '<a href="?page=login&delete_event='.$row['id'].'">x</a>';
 
     echo '<tr>';
     echo '<td>' . $row['name'] .'</td>';
     echo '<td>' . $row['location'] . '</td>';
     echo '<td>' . format_datetime($row['date_time']) . '</td>';
-    echo '<td>' . $row['important'] . '</td>';
-    //echo '<td>' . $important . '</td>';
+    echo '<td>' . $important_checkbox . '</td>';
     echo '<td>' . $delete . '</td>'; 
     echo '</tr>';
 
@@ -106,6 +121,17 @@ if($_GET['delete_event']){
     $stmt->execute([$_GET['delete_event']]);
 
 }
+
+//UPDATE
+if($_GET['mark_important']){
+
+    $important_query = 'UPDATE `events_table` SET `important`=$mark_important WHERE id=?';
+    $stmt = $pdo->prepare($important_query);
+    $stmt->execute([$_GET['mark_important']]);
+    
+}
+
+//END OF SECTION
 
 //DISPLAY NEXT 3 EVENTS
 function upcoming_3 () {
