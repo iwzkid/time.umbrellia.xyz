@@ -90,16 +90,16 @@ while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     //var_dump($mark_important);
     if ($mark_important == '1') {
         $checkbox_state="checked";
-        $important_checkbox = '<a href="?mark_important='.$row['id'].'"><input type="checkbox" name="mark_important" checked=' . $checkbox_state . '></input></a>';
+        $important_checkbox = '<a href="?mark_important='.$row['id'].'"><input type="checkbox" class="important_checkbox" name="mark_important" checked=' . $checkbox_state . '></input></a>';
     } else {
-        $important_checkbox = '<a href="?mark_important='.$row['id'].'"><input type="checkbox" name="mark_important"></input></a>';
+        $important_checkbox = '<a href="?mark_important='.$row['id'].'"><input type="checkbox" class="important_checkbox" name="mark_important"></input></a>';
     } 
 
     //$important_checkbox = '<a href="?mark_important='.$row['id'].'"><input type="checkbox" name="mark_important" checked=' . $checkbox_state . '></input></a>';
     $delete = '<a href="?page=login&delete_event='.$row['id'].'">x</a>';
 
-    echo '<tr>';
-    echo '<td>' . $row['name'] .'</td>';
+    echo '<tr data-id="' . $row['id'] . '">';
+    echo '<td>' . $row['name'] . '</td>';
     echo '<td>' . $row['location'] . '</td>';
     echo '<td>' . format_datetime($row['date_time']) . '</td>';
     echo '<td>' . $important_checkbox . '</td>';
@@ -123,12 +123,16 @@ if($_GET['delete_event']){
 }
 
 //UPDATE
-if($_GET['mark_important']){
+if( isset($_POST['mark_important']) ){
+    $mark_important = $_POST['mark_important'] == "true" ? 1 : 0;
 
-    $important_query = 'UPDATE `events_table` SET `important`=$mark_important WHERE id=?';
+    var_dump($mark_important);
+
+    $important_query = "UPDATE `events_table` SET `important`='$mark_important' WHERE id=?";
     $stmt = $pdo->prepare($important_query);
-    $stmt->execute([$_GET['mark_important']]);
-    
+    var_dump( $stmt->execute( [ $_POST['id'] ] ) );
+    echo 'true';
+    exit();
 }
 
 //END OF SECTION

@@ -3,12 +3,11 @@
 //error_reporting(E_ALL);
 //ini_set('display_errors', 1); 
 
+#include DB functions files
+include 'inc/db_functions.php';
 
 #include header
 include 'inc/header.php';
-
-#include DB functions files
-include 'inc/db_functions.php';
 
 $title = "Time";
 $metaD = "For Time Management!";
