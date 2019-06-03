@@ -15,7 +15,7 @@
 
 .footer {
     width: 100%;
-    background-color: #cc0000;
+    /*background-color: #cc0000;*/
     color: white;
     text-align: center;
 }
@@ -144,3 +144,6 @@ hr {
 .form-group {
 
 }
+
+/*CLOCK*/
+

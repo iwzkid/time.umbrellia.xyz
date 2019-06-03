@@ -39,6 +39,16 @@ $(function () {
     });
 });
 
-
+//CLOCK
+/*
+var myVar = setInterval(function() {
+    myTimer();
+  }, 1000);
+  
+  function myTimer() {
+    var d = new Date();
+    document.getElementById("clock").innerHTML = d.toLocaleTimeString();
+  }
+*/
 //do not delete my end of jquery function >.<
 });
