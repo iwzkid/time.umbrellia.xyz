@@ -7,44 +7,38 @@
     <div class="row">
         <div class="col-md-6"> 
             <h5>Add event to agenda:</h5>
-            <form class="form-group" method="POST">
-                Name:
-                <br>
-                <input type="text" name="name_event" placeholder="name"/>
-                <br>
-                Location:
-                <br>
-                <input type="text" name="location_event" placeholder="location"/> 
-                <br>
+            <form method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter name" name="name_event">
+                </div>
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <input type="text" class="form-control" id="location" placeholder="Location of event" name="location_event">
+                </div>
                 Date & Time:
                 <br>
             <!--  <input type="date" name="time_event" placeholder="date and time"/> -->
-            <div class="input-group date" id="datetimepicker2" data-target-input="nearest">
-                <input type="text" name="time_event" class="form-control datetimepicker-input" data-target="#datetimepicker2"/>
-                <div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker">
-                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                <div class="input-group date" id="datetimepicker2" data-target-input="nearest">
+                    <input type="text" name="time_event" class="form-control datetimepicker-input" data-target="#datetimepicker2"/>
+                    <div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker">
+                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                    </div>
                 </div>
-            </div>
-
-        <!--testin-->
-
-        <!--no more testin-->
-
-                <br>
-                Duration:
-                <br>
-                <input type="text" name="duration_event" placeholder="duration of event"/> 
-                <br>
+                <div class="form-group">
+                    <label for="duration">Duration:</label>
+                    <input type="text" class="form-control" id="duration" placeholder="Duration" name="duration_event">
+                </div>
                 Important:
                 <br>
                 <input type="checkbox" name="important_event"/> 
                 <br>
-                Recurring:
-                <br>
-                <input type="text" name="recurring_event" placeholder="reccurs for"/> 
-                <br>
-                <br>
+                <div class="form-group">
+                    <label for="recurring">Recurring:</label>
+                    <input type="text" class="form-control" id="reccuring" placeholder="Reccurs for" name="recurring_event">
+                </div>
                 <button type="submit" class="btn btn-success">Add</button>
+                <br>
                 <br>
             </form>
         </div>

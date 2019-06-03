@@ -7,11 +7,11 @@
     <div class="row">
         <div class="col-md-6">
             <h5>Add note:</h5>
-            <form class="form-group" method="POST">
-                Note:
-                <br>
-                <input type="text" name="note_text" placeholder="note"/>
-                <br>
+            <form method="POST">
+            <div class="form-group">
+                <label for="note">Note:</label>
+                <input type="text" class="form-control" id="note" placeholder="Enter note" name="note_text">
+            </div>
                 Valid until:
                 <br>
                 <!-- <input type="date" name="valid_until" placeholder="display until"/> -->
@@ -25,6 +25,7 @@
                 <br>
                 <button type="submit" class="btn btn-success">Add</button>
                 <br>
+                <br>
             </form>
         </div>
 
@@ -35,6 +36,8 @@
     </div>
     <hr>
 </div>
+
+<!--TESTIN-->
 
 
 

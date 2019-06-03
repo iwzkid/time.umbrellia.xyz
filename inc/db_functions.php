@@ -143,7 +143,7 @@ function upcoming_3 () {
 
     global $pdo;
 
-    $stmt = $pdo->query('SELECT * FROM events_table ORDER BY date_time asc LIMIT 3');
+    $stmt = $pdo->query('SELECT * FROM events_table WHERE DAY(date_time) >= DAY(NOW()) AND MONTH(date_time) >= MONTH(NOW()) ORDER BY date_time asc LIMIT 3');
 
     echo '<table class="table table-hover">';
     echo '<thead>';
