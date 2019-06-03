@@ -74,9 +74,9 @@ $mark_important = isset($_POST["mark_important"]) ? 1 : 0;
 
 global $pdo;
 
-$stmt = $pdo->query('SELECT * FROM events_table');
+$stmt = $pdo->query('SELECT * FROM events_table WHERE date_time >= NOW() ORDER BY date_time asc');
 
-echo '<table class="events-table">';
+echo '<table class="table table-hover events-table">';
 echo '<thead>';
 echo '<th><h5>Name</h5></th><th><h5>Location</h5></th><th><h5>Date & Time</h5></th><th><h5>Important</h5></th><th><h5>Delete</h5></th>';
 echo '</thead>';
@@ -90,13 +90,13 @@ while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     //var_dump($mark_important);
     if ($mark_important == '1') {
         $checkbox_state="checked";
-        $important_checkbox = '<a href="?mark_important='.$row['id'].'"><input type="checkbox" class="important_checkbox" name="mark_important" checked=' . $checkbox_state . '></input></a>';
+        $important_checkbox = '<input type="checkbox" class="important_checkbox" name="mark_important" checked=' . $checkbox_state . '/>';
     } else {
-        $important_checkbox = '<a href="?mark_important='.$row['id'].'"><input type="checkbox" class="important_checkbox" name="mark_important"></input></a>';
+        $important_checkbox = '<input type="checkbox" class="important_checkbox" name="mark_important"/>';
     } 
 
     //$important_checkbox = '<a href="?mark_important='.$row['id'].'"><input type="checkbox" name="mark_important" checked=' . $checkbox_state . '></input></a>';
-    $delete = '<a href="?page=login&delete_event='.$row['id'].'">x</a>';
+    $delete = '<a class="delete_event" href="?page=login&delete_event='.$row['id'].'">x</a>';
 
     echo '<tr data-id="' . $row['id'] . '">';
     echo '<td>' . $row['name'] . '</td>';
@@ -114,12 +114,13 @@ echo '</table>';
 }
 
 //DELETE EVENT
-if($_GET['delete_event']){
+if($_POST['delete_event']){
 
     $delete_query = 'DELETE FROM events_table WHERE id = ?';
     $stmt = $pdo->prepare($delete_query);
-    $stmt->execute([$_GET['delete_event']]);
-
+    $stmt->execute([$_POST['id']]);
+    echo 'Successfully deleted row';
+    exit();
 }
 
 //UPDATE
@@ -130,7 +131,7 @@ if( isset($_POST['mark_important']) ){
 
     $important_query = "UPDATE `events_table` SET `important`='$mark_important' WHERE id=?";
     $stmt = $pdo->prepare($important_query);
-    var_dump( $stmt->execute( [ $_POST['id'] ] ) );
+    $stmt->execute( [ $_POST['id']]);
     echo 'true';
     exit();
 }
