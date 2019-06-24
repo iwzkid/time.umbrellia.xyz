@@ -1,10 +1,16 @@
 <?php
 
 //error_reporting(E_ALL);
-//ini_set('display_errors', 1); 
+//ini_set('display_errors', 1);
+
+//Include Composer's autoloader
+include 'vendor/autoload.php';
 
 #include DB functions files
 include 'inc/db_functions.php';
+
+#
+$auth = new \Delight\Auth\Auth($pdo);
 
 #include header
 include 'inc/header.php';

@@ -1,7 +1,6 @@
 <?php
 #LOGIN FORM & LOGIN FUNCTIONS
 
-include 'login/login_functions.php';
 ?>
 
 <div class="container-fluid">
@@ -13,8 +12,8 @@ include 'login/login_functions.php';
         <br>
             <div class="card">
                 <div class="card-body">
-                    <form action="" autocomplete="off">
-                        <div class="form-group" method="POST">
+                    <form action="" autocomplete="off" method="POST">
+                        <div class="form-group">
                             Username:<br>
                             <input type="text" class="form-control" name="username" required>
                         </div>

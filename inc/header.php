@@ -57,7 +57,7 @@
          <a class="nav-link" href="index.php?page=agenda">Agenda</a>
       </li>
       <li class="nav-item">
-         <a class="nav-link" href="index.php?page=important">Important</a>
+         <a class="nav-link" href="index.php?page=important">Important & Resources</a>
       </li>
       <li class="nav-item">
          <a class="nav-link" href="index.php?page=notes">Notes</a>
