@@ -10,7 +10,7 @@
             <form method="POST">
             <div class="form-group">
                 <label for="note">Note:</label>
-                <input type="text" class="form-control" id="note" placeholder="Enter note" name="note_text">
+                <textarea type="text" rows="5" class="form-control" id="note" placeholder="Enter note" name="note_text"></textarea>
             </div>
                 Valid until:
                 <br>
@@ -37,7 +37,6 @@
                 <p>Valid Until - To specify when the note expires.</p>
                 <hr>
         </div>
-
     </div>
     <hr>
 </div>

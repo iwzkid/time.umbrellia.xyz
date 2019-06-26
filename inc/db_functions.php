@@ -204,7 +204,7 @@ function notes_deadline() {
 
     global $pdo;
 
-    $stmt = $pdo->query('SELECT * FROM notes_table WHERE date_time >= NOW() ORDER BY date_time asc LIMIT 5');
+    $stmt = $pdo->query('SELECT * FROM notes_table WHERE date_time >= NOW() ORDER BY date_time asc LIMIT 3');
 
         while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 
