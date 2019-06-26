@@ -45,6 +45,22 @@
 
         <div class="col-md-6">
             <h5>Guidelines for adding an event:</h5>
+                <br>
+                <p>Name - Please specify the name of the event.</p>
+                <hr>
+                <p>Location - Please specify the location of the event.</p>
+                <hr>
+                <p>Date & Time - To advise on when the event is taking place.</p>
+                <hr>
+                <p>Important - If ticked, the event will be more visible.</p>
+                <hr>
+                <p>Recurring - Based on the value from this box, the event will be inserted into the database as per below:
+                    <br>
+                        1 - only 1 insert
+                    <br>
+                        2 - inserted for the date & time when it will take place + the following week
+                    <br>
+                    The bigger the value is, the more weeks will have this event.</p>
         </div>
     </div>
 </div>

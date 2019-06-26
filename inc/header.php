@@ -65,7 +65,12 @@
       <li class="nav-item">
          <a class="nav-link" href="index.php?page=login">Admin</a>
       </li>
-   
+      <?php if ($auth->isLoggedIn()) { ?>
+            <li class="nav-item ml-lg-auto">
+               <a class="nav-link" href="index.php?logout=true">Logout</a>
+            </li>
+      <?php } ?>
+
    </ul>
   </div>
 </nav>

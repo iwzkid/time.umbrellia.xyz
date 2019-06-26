@@ -3,35 +3,47 @@
 <div class="containter-fluid">
     <div class="row">
         <div class="col-md-6">
+            <br>
+            <br>
             <div class="row">
                 <div class="col-md-12">
-                    <?php include 'home/important_today.php'; ?>
+                    <div class="row">
+                        <div class="card border-danger mx-sm-1 p-3">
+                            <div class="card-body text-center">
+                                <?php include 'home/important_today.php'; ?>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
+            <br>
             <div class="row">
                 <div class="col-md-12">
-                    <?php include 'important/important_upcoming.php'; ?>
+                    <div class="row">
+                        <div class="card border-danger mx-sm-1 p-3">
+                            <div class="card-body text-center">
+                                <?php include 'important/important_upcoming.php'; ?>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <br>
+            <br>
         </div>
+
         <div class="col-md-6">
-            <h5>Here go RESOURCES with fancy data toggle like a folder</h5>
-            <!--WILL BE AN INCLUDE BUT FOR NOW DUMMY TEXT <3 -->
+            <br>
             <div class="row">
-                resource 1 - Dropbox
-            </div>
-            <div class="row">
-                resource 2 - Possibly an own ftp server with a request password button? Maybe
-            </div>
-            <div class="row">
-                resource 3 - Subscribe your email to the automated bla bla mails
-            </div>
-            <div class="row">
-                resource 4 - Onedrive/Google Docs
-            </div>
-            <div class="row">
-                resource 5 - Whatever I feel like adding - Join Telegram group
+                <div class="col-md-12">
+                    <div class="row">
+                        <br>
+                        <h5 class= ml-md-2>Resources</h5>
+                        <br>
+                        <hr>
+                        <?php include 'important/resources.php'; ?>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

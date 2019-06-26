@@ -31,6 +31,11 @@
 
         <div class="col-md-6">
             <h5>Guidelines for adding a note:</h5>
+            <br>
+                <p>Note - Textarea for entering the note you wish to display.</p>
+                <hr>
+                <p>Valid Until - To specify when the note expires.</p>
+                <hr>
         </div>
 
     </div>

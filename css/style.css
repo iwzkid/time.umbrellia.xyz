@@ -99,11 +99,6 @@ hr {
     border: 1px solid #cc0000;
 }
 */
-/*JUMBOTRON ATTEMPT ON STYLING*/
-
-.jumbotron {
-
-}
 
 /*Display UPCOMING 3 OF HOME PAGE*/
 .upcoming3-table {
@@ -139,13 +134,7 @@ hr {
     padding-top: 10px;
 }
 
-/* input-group for TD date time picker */
-
-.form-group {
-
-}
-
-.border-success {
+.border-success, .border-danger {
     width:100%;
 }
 

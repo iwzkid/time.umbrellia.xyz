@@ -206,11 +206,13 @@ function notes_deadline() {
 
     $stmt = $pdo->query('SELECT * FROM notes_table WHERE date_time >= NOW() ORDER BY date_time asc LIMIT 5');
 
-    while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+        while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 
-    echo $row['notes'].' '.format_datetime($row['date_time']).'<br>';
+        echo $row['notes'].' '.format_datetime($row['date_time']).'<br>';
 
-    } 
+        } 
+
+   $result = $stmt->fetch();
 
 }
 
@@ -221,7 +223,7 @@ function important_upcoming3(){
     global $pdo;
     
     $stmt = $pdo->query('SELECT * FROM events_table WHERE DAY(date_time) >= DAY(NOW()) AND MONTH(date_time) >= MONTH(NOW()) AND important = 1 ORDER BY date_time asc LIMIT 3');
-    
+
         while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     
         echo $row['name'].' '.$row['location'].' '.format_datetime($row['date_time']).'<br>';
