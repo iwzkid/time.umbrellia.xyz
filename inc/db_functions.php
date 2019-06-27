@@ -11,14 +11,12 @@
         $k = substr($value,0,strpos($value,'='));
         $conarr[$k] = substr($value,strpos($value,'=')+1);
     }
-    // $conarr is an array of values of connection string
-    print_r($conarr); 
 
 #DB_data
-$host = '127.0.0.1:55109';
-$user = 'root';
-$password = 'root';
-$db = 'time_umbrellia_xyz';
+$host = $conarr['Data Source'];
+$user = $conarr['User Id'];
+$password = $conarr['Password'];
+$db = $conarr['Database'];
 
 //DSN
 $dsn = 'mysql:host='. $host .';dbname='. $db;
