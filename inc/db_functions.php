@@ -16,7 +16,7 @@
 $host = $conarr['Data Source'];
 $user = $conarr['User Id'];
 $password = $conarr['Password'];
-$db = $conarr['Database'];
+$db = 'time_umbrellia_xyz';
 
 //DSN
 $dsn = 'mysql:host='. $host .';dbname='. $db;
