@@ -2,7 +2,9 @@
 #CALENDAR (WEEK FORMAT) - default is set to current week
 ?>
 
-    <div class="container_fluid" id="calendar">
+<div class="container_fluid" id="calendar">
+        <div class="row">
+        <div class="col-md-12 col-sm-10">
 
     <?php 
 
@@ -48,4 +50,6 @@
         </div>
     <?php } ?>
 
+        </div>
+    </div>
 </div>

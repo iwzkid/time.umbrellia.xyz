@@ -8,7 +8,7 @@
     <h5>You must log in to use the admin page!</h5>
     <br><hr>
     <div class="row justify-content-center align-items-center">
-        <div class="col-md-6 col-sm-12">
+        <div class="col-md-4 col-sm-10">
         <br>
             <div class="card">
                 <div class="card-body">
