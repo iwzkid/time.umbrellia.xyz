@@ -219,7 +219,7 @@ function notes_deadline() {
 
         while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 
-        echo $row['notes'].' '.format_datetime($row['date_time']).'<br><hr>';
+        echo $row['notes'].' '.format_datetime($row['date_time']).'<br><br><hr>';
 
         } 
 
