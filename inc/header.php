@@ -70,7 +70,6 @@
                <a class="nav-link" href="index.php?logout=true">Logout</a>
             </li>
       <?php } ?>
-
    </ul>
   </div>
 </nav>
