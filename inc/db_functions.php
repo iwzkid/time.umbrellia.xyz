@@ -158,7 +158,8 @@ function upcoming_3 () {
 
     $stmt = $pdo->query('SELECT * FROM events_table WHERE DAY(date_time) >= DAY(NOW()) AND MONTH(date_time) = MONTH(NOW()) OR DAY(date_time) < DAY(NOW()) AND MONTH(date_time) > MONTH(NOW()) ORDER BY date_time asc LIMIT 3');
 
-    echo '<table class="table table-responsive-md table-bordered">';
+    echo '<div class="table-responsive-sm">';
+    echo '<table class="table table-bordered">';
     echo '<thead>';
     echo '<th>Name</th><th>Location</th><th>Date&Time</th>';
     echo '</thead>';
@@ -176,6 +177,7 @@ function upcoming_3 () {
 
     echo '</tbody>';
     echo '</table>';
+    echo '</div>';
 
 }
 
