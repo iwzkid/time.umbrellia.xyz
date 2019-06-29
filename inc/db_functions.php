@@ -87,7 +87,8 @@ global $pdo;
 
 $stmt = $pdo->query('SELECT * FROM events_table WHERE date_time >= NOW() ORDER BY date_time asc');
 
-echo '<table class="table table-hover events-table">';
+echo '<div class="table-responsive-sm">';
+echo '<table class="table table-hover">';
 echo '<thead>';
 echo '<th><h5>Name</h5></th><th><h5>Location</h5></th><th><h5>Date & Time</h5></th><th><h5>Important</h5></th><th><h5>Delete</h5></th>';
 echo '</thead>';
@@ -121,6 +122,7 @@ while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 
 echo '</tbody>';
 echo '</table>';
+echo '</div>';
 
 }
 

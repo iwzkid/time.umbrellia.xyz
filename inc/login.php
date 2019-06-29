@@ -4,7 +4,7 @@
 if ($auth->isLoggedIn()){
     include 'login/add_calendar.php';
     include 'login/add_notes.php';
-   # include 'login/important_or_delete.php';
+    include 'login/important_or_delete.php';
     include 'login/delete.php';
 }else {
     #IF LOGIN IS SUCCESSFULL DO ->
