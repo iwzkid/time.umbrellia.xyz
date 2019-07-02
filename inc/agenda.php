@@ -1,7 +1,7 @@
 <?php
 #AGENDA BASIC PAGE
-?>
 
+/*
 <div class="containter-fluid">
         <div class="row">
                 <div class="col-md-12">
@@ -11,6 +11,16 @@
         <div class="row">
                 <div class="col-md-12">
                         <?php include 'agenda/calendar.php';?>
+                </div>
+        </div>
+</div>
+*/
+?>
+
+<div class="containter-fluid">
+        <div class="row">
+                <div class="col-md-12">
+                       <div id="calendar"></div>
                 </div>
         </div>
 </div>

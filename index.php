@@ -1,7 +1,7 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+//error_reporting(E_ALL);
+//ini_set('display_errors', 1);
 
 //Include Composer's autoloader
 require 'vendor/autoload.php';
@@ -14,6 +14,10 @@ $auth = new \Delight\Auth\Auth($pdo);
 
 # Include login functions
 require 'inc/login/login_functions.php';
+
+# Calendar events
+
+require 'inc/agenda/events.php';
 
 #include header
 include 'inc/header.php';

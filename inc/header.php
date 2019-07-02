@@ -21,6 +21,19 @@
 
 <!-- MyCSS -->
 
+<?php if($_GET['page'] == 'agenda'){ ?>
+   <link href='js/fullcalendar/core/main.css' rel='stylesheet' />
+   <link href='js/fullcalendar/daygrid/main.css' rel='stylesheet' />
+   <link href='js/fullcalendar/timegrid/main.css' rel='stylesheet' />
+   <link href='js/fullcalendar/list/main.css' rel='stylesheet' />
+   <script src='js/fullcalendar/core/main.js'></script>
+   <script src='js/fullcalendar/interaction/main.js'></script>
+   <script src='js/fullcalendar/daygrid/main.js'></script>
+   <script src='js/fullcalendar/timegrid/main.js'></script>
+   <script src='js/fullcalendar/list/main.js'></script>
+   <script src='js/calendar.js'></script>
+<?php } ?>
+
 <link rel="stylesheet" href="./css/style.css"/>
 
 <title>
@@ -32,6 +45,8 @@
       echo "Time"; 
    } ?>
 </title>
+
+
 
 </head>
 
