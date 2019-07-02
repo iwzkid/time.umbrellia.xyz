@@ -28,7 +28,8 @@ if($_GET['action'] == 'events'){
             'title' => $row['title'] . ' ( '. $row['location'] . ' ) ',
             'start' => $row['start'],
             'end'   => $row['end'],
-            'color' => $row['important'] == 1 ? 'red' : ''
+            'color' => $row['important'] == 1 ? '#cc0000' : '',
+            'textColor' => $row['important'] == 1 ? '#ffffff' : ''
         ); 
 
     }
