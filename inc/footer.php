@@ -35,6 +35,15 @@
 
 <script type="text/javascript" src="./js/script.js"></script>
 
+<?php if($_GET['page'] == 'agenda'){ ?>
+   <script src='js/fullcalendar/core/main.js'></script>
+   <script src='js/fullcalendar/interaction/main.js'></script>
+   <script src='js/fullcalendar/daygrid/main.js'></script>
+   <script src='js/fullcalendar/timegrid/main.js'></script>
+   <script src='js/fullcalendar/list/main.js'></script>
+   <script src='js/calendar.js'></script>
+<?php } ?>
+
 </body>
 
 </html>

@@ -52,6 +52,8 @@
                 <hr>
                 <p>Date & Time - To advise on when the event is taking place.</p>
                 <hr>
+                <p>Duration - To advise on the duration of the event - Hour format (ex. 2).</p>
+                <hr>
                 <p>Important - If ticked, the event will be more visible.</p>
                 <hr>
                 <p>Recurring - Based on the value from this box, the event will be inserted into the database as per below:

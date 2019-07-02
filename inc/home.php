@@ -5,10 +5,6 @@
         <div class="row">
             <div class="col-md-6 col-sm-12">
                 <?php include 'home/upcoming.php';?>
-                <br>
-                <div class="card mx-sm-1 p-3">
-                    Days left until exam session - Counter?
-                </div>
             </div>
             <div class="col-md-6 col-sm-12">
                 <div class="row">

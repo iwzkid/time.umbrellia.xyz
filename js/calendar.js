@@ -9,9 +9,10 @@ document.addEventListener('DOMContentLoaded', function() {
         right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
       },
       navLinks: true, // can click day/week names to navigate views
-      editable: true,
-      eventLimit: true, // allow "more" link when too many events
-      events: 'index.php?action=events'
+      editable: false,
+      eventLimit: false, // allow "more" link when too many events
+      events: 'index.php?action=events',
+      themeSystem: 'bootstrap'
     });
 
     calendar.render();

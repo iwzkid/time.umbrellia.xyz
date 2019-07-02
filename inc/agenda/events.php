@@ -19,12 +19,18 @@ if($_GET['action'] == 'events'){
     }
 
     // Read and parse our events JSON file into an array of event data arrays.
-    $query = "SELECT name 'title', date_time 'start', date_time + INTERVAL `duration` HOUR 'end' FROM events_table WHERE date_time > '$start' AND date_time + INTERVAL `duration` HOUR < '$end'";
+    $query = "SELECT name 'title', important, location, date_time 'start', date_time + INTERVAL `duration` HOUR 'end' FROM events_table WHERE date_time > '$start' AND date_time + INTERVAL `duration` HOUR < '$end'";
 
     $stmt = $pdo->query($query); 
 
     while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-        $input_arrays[] = $row; 
+        $input_arrays[] = array(
+            'title' => $row['title'] . ' ( '. $row['location'] . ' ) ',
+            'start' => $row['start'],
+            'end'   => $row['end'],
+            'color' => $row['important'] == 1 ? 'red' : ''
+        ); 
+
     }
 
     // Accumulate an output array of event data arrays.

@@ -20,7 +20,7 @@
 <div class="containter-fluid">
         <div class="row">
                 <div class="col-md-12">
-                       <div id="calendar"></div>
+                       <div id="calendar" class="mt-4 mb-4"></div>
                 </div>
         </div>
 </div>

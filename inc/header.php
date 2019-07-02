@@ -26,12 +26,7 @@
    <link href='js/fullcalendar/daygrid/main.css' rel='stylesheet' />
    <link href='js/fullcalendar/timegrid/main.css' rel='stylesheet' />
    <link href='js/fullcalendar/list/main.css' rel='stylesheet' />
-   <script src='js/fullcalendar/core/main.js'></script>
-   <script src='js/fullcalendar/interaction/main.js'></script>
-   <script src='js/fullcalendar/daygrid/main.js'></script>
-   <script src='js/fullcalendar/timegrid/main.js'></script>
-   <script src='js/fullcalendar/list/main.js'></script>
-   <script src='js/calendar.js'></script>
+   <link href='js/fullcalendar/bootstrap/main.css' rel='stylesheet' />
 <?php } ?>
 
 <link rel="stylesheet" href="./css/style.css"/>
