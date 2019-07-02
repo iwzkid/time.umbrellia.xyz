@@ -283,3 +283,11 @@ function display_expirednotes() {
         echo '</tbody>';
         echo '</table>';     
 }
+
+//insert subscriber
+
+if($_POST['email']) {
+    $insert_query = 'INSERT INTO `subscribers`(`email`) VALUES (?)';
+    $stmt = $pdo->prepare($insert_query);
+    $stmt->execute([$_POST['email']]);
+}
