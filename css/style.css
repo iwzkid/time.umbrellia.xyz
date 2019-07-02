@@ -1,5 +1,22 @@
 /* HEADER.PHP */
 
+html, body {
+    height: 100%;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    flex: 1 0 auto;
+  }
+  .container {
+    flex: 1 0 auto;
+  }
+  .footer {
+    flex-shrink: 0;
+  }
+
 .navbar-brand > img {
     width: 30px;
 }

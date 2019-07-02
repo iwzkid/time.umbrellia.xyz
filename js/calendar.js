@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
       editable: false,
       eventLimit: false, // allow "more" link when too many events
       events: 'index.php?action=events',
-      themeSystem: 'bootstrap'
+      themeSystem: 'bootstrap',
+      allDaySlot: false
     });
 
     calendar.render();
