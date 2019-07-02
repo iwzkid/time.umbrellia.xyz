@@ -1,6 +1,15 @@
 <?php
 #DB RELATED FUNCTIONS
 
+# Localhost
+if($_SERVER['SERVER_NAME'] == 'localhost' || $_SERVER['SERVER_NAME'] == '127.0.0.1'){
+
+    $conarr['Data Source'] = 'localhost';
+    $conarr['User Id'] = 'root';
+    $conarr['Password'] = 'root';
+
+}else{
+    
     //below  will give the whole connectionstring in a single string
     $conn = getenv("MYSQLCONNSTR_localdb"); 
 
@@ -11,6 +20,8 @@
         $k = substr($value,0,strpos($value,'='));
         $conarr[$k] = substr($value,strpos($value,'=')+1);
     }
+
+}
 
 #DB_data
 $host = $conarr['Data Source'];
