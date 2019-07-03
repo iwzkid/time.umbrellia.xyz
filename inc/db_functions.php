@@ -291,3 +291,74 @@ if($_POST['email']) {
     $stmt = $pdo->prepare($insert_query);
     $stmt->execute([$_POST['email']]);
 }
+
+//show and approve subscribers
+
+function display_subscribers() {
+
+    $approve = isset($_POST["approve"]) ? 1 : 0;
+    
+    global $pdo;
+    
+    $stmt = $pdo->query('SELECT * FROM subscribers');
+    
+    echo '<div class="table-responsive-sm">';
+    echo '<table class="table table-hover">';
+    echo '<thead>';
+    echo '<th><h5>Email</h5></th><th><h5>Approve</h5></th><th><h5>Delete</h5></th>';
+    echo '</thead>';
+    echo '<tbody>';
+    
+    while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+    
+        $valuefromdb = $row['approved'];
+        $approve = (int)$valuefromdb; //1 = true, 0 = false
+    
+        //var_dump($mark_important);
+        if ($approve == '1') {
+            $checkbox_state="checked";
+            $approving_checkbox = '<input type="checkbox" class="approve" name="approve" checked=' . $checkbox_state . '/>';
+        } else {
+            $approving_checkbox = '<input type="checkbox" class="approve" name="approve"/>';
+        } 
+    
+        //$important_checkbox = '<a href="?mark_important='.$row['id'].'"><input type="checkbox" name="mark_important" checked=' . $checkbox_state . '></input></a>';
+        $delete_subscriber = '<a class="delete_subscriber" href="?page=login&delete_subscriber='.$row['id'].'">x</a>';
+    
+        echo '<tr data-id="' . $row['id'] . '">';
+        echo '<td>' . $row['email'] . '</td>';
+        echo '<td>' . $approving_checkbox . '</td>';
+        echo '<td>' . $delete_subscriber . '</td>'; 
+        echo '</tr>';
+    
+    } 
+    
+    echo '</tbody>';
+    echo '</table>';
+    echo '</div>';
+    
+    }
+    
+    //DELETE subscriber - works
+    if($_POST['delete_subscriber']){
+    
+        $delete_query = 'DELETE FROM subscribers WHERE id = ?';
+        $stmt = $pdo->prepare($delete_query);
+        $stmt->execute([$_POST['id']]);
+        echo 'Successfully deleted row';
+        exit();
+    }
+    
+    //UPDATE
+    if( isset($_POST['approve']) ){
+        $approve = $_POST['approve'] == "true" ? 1 : 0;
+    
+        var_dump($approve);
+    
+        $approve_query = "UPDATE `subscribers` SET `approved`='$approve' WHERE id=?";
+        $stmt = $pdo->prepare($approve_query);
+        $stmt->execute( [ $_POST['id']]);
+        echo 'true';
+        exit();
+    }
+

@@ -41,8 +41,6 @@
    } ?>
 </title>
 
-
-
 </head>
 
 <body>

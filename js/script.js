@@ -39,16 +39,34 @@ $(function () {
     });
 });
 
-//CLOCK
-/*
-var myVar = setInterval(function() {
-    myTimer();
-  }, 1000);
-  
-  function myTimer() {
-    var d = new Date();
-    document.getElementById("clock").innerHTML = d.toLocaleTimeString();
-  }
-*/
+//approving subscribers
+
+//posts parameters for updating the table row - update is done in db_functions
+$('.approve').on('click', function(){
+    console.log( $(this).parents('tr').data('id') , 'is checked' , $(this).prop('checked') );
+
+    $.post( window.location, {
+        "id": $(this).parents('tr').data('id'),
+        "approve": $(this).prop('checked')
+    }, function(result){
+        console.log(result);
+    });
+});
+
+//deletes row from db and clears table row, delete query is in db_functions.php
+$('.delete_subscriber').on('click', function(){
+    var that=$(this);
+
+    $.post( window.location, {
+        "id": $(this).parents('tr').data('id'),
+        "delete_subscriber": true
+    }, function(result){
+        console.log(result);
+        that.parents('tr').remove();
+    });
+return false;
+});
+
+
 //do not delete my end of jquery function >.<
 });
